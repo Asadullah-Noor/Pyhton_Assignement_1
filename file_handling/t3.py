@@ -1,15 +1,11 @@
 import json
 data={
     "name":"Asadullah",
-    "age":23,
-    "Class":"Bsse"
+    "age":30,
+    "Class":"BSSE"
 }
 try:
-    with open("data.json", "w") as file:
-        json_string = json.dumps(data, indent=4)
-        print(json_string)
-    #     json.dump(data, file, indent=4)
-    # print("Data written successfully!")
-
+  with open('Json_file.json','w') as f:
+   json.dump(data,f,indent=4)
 except Exception as e:
-    print("Error while writing file:", e)
+  print("Error with file handling :",e)
