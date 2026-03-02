@@ -1,0 +1,65 @@
+[
+    {
+        "Name": "asadullah",
+        "Marks": [
+            1,
+            2,
+            3
+        ],
+        "Average": 2.0
+    },
+    {
+        "Name": "ali ",
+        "Marks": [
+            3,
+            4,
+            3
+        ],
+        "Average": 3.3333333333333335
+    },
+    {
+        "Name": "asadullah",
+        "Marks": [
+            12,
+            22,
+            33
+        ],
+        "Average": 22.333333333333332
+    },
+    {
+        "Name": "akmal",
+        "Marks": [
+            88,
+            33,
+            22
+        ],
+        "Average": 47.666666666666664
+    },
+    {
+        "Name": "shahzaib",
+        "Marks": [
+            33,
+            33,
+            44
+        ],
+        "Average": 36.666666666666664
+    },
+    {
+        "Name": "Daud",
+        "Marks": [
+            12,
+            23,
+            34
+        ],
+        "Average": 23.0
+    },
+    {
+        "Name": "Mohad",
+        "Marks": [
+            11,
+            22,
+            33
+        ],
+        "Average": 22.0
+    }
+]
