@@ -1,22 +1,22 @@
-from typing_extensions import override
 class Parent:
-    Area_Rectangle=0
-    def __init__(self,length, width):
-        self.length=length
-        self.width=width
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    # def area(self):
+    #     area_rectangle = self.length * self.width
+    #     print(f"The area of the rectangle is {area_rectangle}")
+
+
+class Square(Parent):
+    def __init__(self, side):
+        super().__init__(side, side)
+        print("The Child Class is here working!")
+
     def area(self):
-        Area_Rectangle=self.length*self.width
-        print(f" The area of the rectangle is {Area_Rectangle}")
-
-class Squre(Parent):
-    def __init__(self):
-        print(f"The Child Class is here working !")
-    @override
-    def area(self):
-        print("The area of the squre")
-
-Squre_Obj=Squre()
-Squre_Obj.area()
+        area_square = self.length * self.width
+        print(f"The area of the square is {area_square}")
 
 
-        
+Square_Obj = Square(5)
+Square_Obj.area()
