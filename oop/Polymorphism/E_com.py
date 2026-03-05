@@ -1,28 +1,25 @@
 class Payment:
-    def pay(slef, amount):
-        return amount
+    def pay(self, amount):
+        print(f"Processing payment of {amount}")
+
 class CreditCard(Payment):
-    def pay(slef, amount):
-        return super().pay(amount)
+    def pay(self, amount):
+        print(f"Paid {amount} using Credit Card")
+
 class PayPal(Payment):
-    def pay(slef, amount):
-        return super().pay(amount)
+    def pay(self, amount):
+        print(f"Paid {amount} using PayPal")
+
 class BankTransfer(Payment):
     def pay(self, amount):
-        return super().pay(amount)
-    
+        print(f"Paid {amount} using Bank Transfer")
+
 class CashOnDelivery(Payment):
-    def pay(slef, amount):
-        return super().pay(amount)
-CC=CreditCard()
-PP=PayPal()
-BT=BankTransfer()
-COD=CashOnDelivery()
-Payment=[
-    CC.pay(30),
-    PP.pay(40),
-    BT.pay(50),
-    COD.pay(60)
-]
-for i in Payment:
-    print(i)
+    def pay(self, amount):
+        print(f"Paid {amount} using Cash on Delivery")
+
+
+payments = [CreditCard(), PayPal(), BankTransfer(), CashOnDelivery()]
+
+for p in payments:
+    p.pay(1000)
