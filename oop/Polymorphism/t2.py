@@ -5,10 +5,7 @@ class Printer:
             print("Printer printing text:", value)
         elif isinstance(value, int):
             print("Printer printing number:", value)
-
-
 class AdvancedPrinter(Printer):
-
     # overriding
     def print(self, value, copies=None):
 
