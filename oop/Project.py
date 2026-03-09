@@ -1,18 +1,30 @@
 from abc import ABC,abstractmethod
 class Bank(ABC):
-    __account_number=0
-    __owner_name=""
-    __balance=10000000000000
+    def __init__(self,balance,owner,accountNumber):
+        self.__accountNumber=accountNumber
+        self.__owner=owner
+        self.__balance=balance
     @abstractmethod
     def deposit(self,amount):
-       if amount<=0 and amount<=5000:
-           print("Value should be Greater to zero and less than 100000")
-       if amount>0 and amount <=100000:
-            self.__balance += amount
+       pass
+    def withdraw(self,amount):
+        if amount <=self.__balance:
+            self.__balance-=amount
             return self.__balance
-       else:
-           print("Pleae enter valid input")
-    def withdraw(amount):
-        pass
-    def display_account_info():
-        pass
+        if amount<=0:
+            return f"Invalid input!"
+    def display_account_info(self):
+        print(f"The total Balance is {self.__balance}")
+        print("If you interested to deposit the amount please check it again")
+class SavingsAccount(Bank):
+    print("Hello I m Asadullah Noor") 
+    def deposit(self,amount):
+        if amount <=0 or amount>10000:
+            print("Invalid Amount")
+        else:
+            self._Bank__balance+=amount
+            return self._Bank__balance
+
+    
+account=SavingsAccount(20000, "Asadullah" , "ls23bsse0103") 
+account.display_account_info()
