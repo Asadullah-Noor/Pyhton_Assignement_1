@@ -24,12 +24,9 @@ class VIPCustomer(Customer):
     def calculate_bill(self, order):
         total = order.get_total()
         return total * 0.8   # 20% discount
-
-
 class Restaurant:
     def __init__(self):
         self.menu = []
-
     def add_menu_item(self, item):
         self.menu.append(item)
     def display(self):
@@ -40,12 +37,10 @@ class Restaurant:
 # Create menu items
 burger = MenuItem("Burger", 500)
 pizza = MenuItem("Pizza", 1000)
-
 # Create order
 order = Order()
 order.add_item(burger)
 order.add_item(pizza)
-
 # Customers
 regular = RegularCustomer()
 premium = PremiumCustomer()
