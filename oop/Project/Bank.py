@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
-
 # --- Custom Exceptions ---
 class InsufficientFundsError(Exception):
     pass
@@ -32,7 +31,6 @@ class Bank(ABC):
         self._owner = owner
         self._balance = balance  # protected attribute
         self._transactions = []  # store transaction history
-
     @abstractmethod
     def deposit(self, amount):
         pass
@@ -51,7 +49,6 @@ class Bank(ABC):
         if not self._transactions:
             return "No transactions yet."
         return "\n".join(str(t) for t in self._transactions)
-
     def transfer(self, target_account, amount):
         """Transfer money from this account to another account"""
         if not isinstance(target_account, Bank):
@@ -61,18 +58,15 @@ class Bank(ABC):
         self._transactions.append(Transaction(f"Transfer to {target_account._account_number}", amount, self._balance))
         target_account._transactions.append(Transaction(f"Transfer from {self._account_number}", amount, target_account._balance))
         return f"Transferred {amount} to {target_account._account_number}"
-
 # --- Savings Account ---
 class SavingsAccount(Bank):
     MIN_BALANCE = 500
-
     def deposit(self, amount):
         if amount <= 0:
             raise ValueError("Deposit amount must be positive")
         self._balance += amount
         self._transactions.append(Transaction("Deposit", amount, self._balance))
         return self._balance
-
     def withdraw(self, amount):
         if amount <= 0:
             raise ValueError("Withdrawal amount must be positive")
@@ -81,11 +75,9 @@ class SavingsAccount(Bank):
         self._balance -= amount
         self._transactions.append(Transaction("Withdraw", amount, self._balance))
         return self._balance
-
 # --- Current Account ---
 class CurrentAccount(Bank):
     OVERDRAFT_LIMIT = -1000
-
     def deposit(self, amount):
         if amount <= 0:
             raise ValueError("Deposit amount must be positive")
@@ -125,7 +117,6 @@ class FixedDepositAccount(Bank):
         self._balance -= amount
         self._transactions.append(Transaction("Withdraw", amount, self._balance))
         return self._balance
-
 # --- Example Usage ---
 if __name__ == "__main__":
     # Savings Account
@@ -157,7 +148,7 @@ if __name__ == "__main__":
     print(current.account_info())
 
     # Fixed Deposit
-    fd = FixedDepositAccount("FD1001", "Asadullah", 5000)
+    fd = FixedDepositAccount("CA1001", "Asadullah", 5000)
     print("\n" + fd.account_info())
     try:
         fd.withdraw(1000)  # Not matured
